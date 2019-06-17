@@ -10,7 +10,8 @@ class Register extends Component {
             breed: '',
             password: '',
             lastSeen: '',
-            birthdate: ''
+            birthdate: '',
+            weight: '',
         }
     }
 
@@ -28,6 +29,7 @@ class Register extends Component {
             password: this.state.password,
             lastSeen: this.state.lastSeen,
             birthdate: this.state.birthdate,
+            weight: this.state.weight,
         }
         register(user).then(res => {
                 this.props.history.push(`/login`)
@@ -87,6 +89,15 @@ class Register extends Component {
                                 />
                             </div>
                             <div className="form-group">
+                                <label htmlFor="weight">Weight</label>
+                                <input type="weight" className="form-control" 
+                                name="weight"
+                                placeholder="12"
+                                value={this.state.weight}
+                                onChange={this.onChange}
+                                />
+                            </div>
+                            <div className="form-group">
                                 <label htmlFor="password">Password</label>
                                 <input type="password" className="form-control" 
                                 name="password"
@@ -95,7 +106,7 @@ class Register extends Component {
                                 onChange={this.onChange}
                                 />
                             </div>
-                            <button type="submit" className="btn btn-lg btn-primary btn-block">
+                            <button type="submit" className="btn btn-lg btn-info btn-block">
                                 Register
                             </button>
                         </form>

@@ -9,6 +9,8 @@ class Profile extends Component {
             name: '',
             breed: '',
             lastSeen: '',
+            weight: '',
+            birthdate: ''
         }
     }
 
@@ -19,7 +21,9 @@ class Profile extends Component {
             username: decoded.username,
             name: decoded.name,
             breed: decoded.breed,
-            lastSeen: decoded.lastSeen
+            lastSeen: decoded.lastSeen,
+            birthdate: decoded.birthdate,
+            weight: decoded.weight
         })
     }
 
@@ -43,6 +47,14 @@ class Profile extends Component {
                             <tr>
                                 <td>Last Seen</td>
                                 <td>{this.state.lastSeen}</td>
+                            </tr>
+                            <tr>
+                                <td>weight</td>
+                                <td>{this.state.weight}</td>
+                            </tr>
+                            <tr>
+                                <td>birthdate</td>
+                                <td>{this.state.birthdate}</td>
                             </tr>
                         </tbody>
                     </table>
