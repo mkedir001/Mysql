@@ -10,6 +10,7 @@ class Register extends Component {
             breed: '',
             password: '',
             lastSeen: '',
+            birthdate: ''
         }
     }
 
@@ -26,11 +27,10 @@ class Register extends Component {
             breed: this.state.breed,
             password: this.state.password,
             lastSeen: this.state.lastSeen,
+            birthdate: this.state.birthdate,
         }
         register(user).then(res => {
-            if (res) {
                 this.props.history.push(`/login`)
-            }
         })
     }
 
@@ -74,6 +74,15 @@ class Register extends Component {
                                 name="lastSeen"
                                 placeholder="2019-04-14"
                                 value={this.state.lastSeen}
+                                onChange={this.onChange}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="birthdate">Birthdate</label>
+                                <input type="birthdate" className="form-control" 
+                                name="birthdate"
+                                placeholder="2016-08-12"
+                                value={this.state.birthdate}
                                 onChange={this.onChange}
                                 />
                             </div>
